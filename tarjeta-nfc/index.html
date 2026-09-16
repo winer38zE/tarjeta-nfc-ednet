@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Edwuar Cárdenas | ED NET PRO</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Swiper CSS (Carrusel Táctil) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 25px -5px rgba(34, 197, 94, 0.4)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #090d16;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(34, 197, 94, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-button {
+            background: rgba(31, 41, 55, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .swiper {
+            width: 100%;
+            padding-bottom: 35px !important;
+        }
+        .swiper-pagination-bullet { background: #475569 !important; }
+        .swiper-pagination-bullet-active {
+            background: #22c55e !important;
+            width: 18px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen flex justify-center items-center p-4 antialiased">
+
+    <main class="w-full max-w-md space-y-5 my-auto">
+
+        <!-- HEADER DE PERFIL -->
+        <section class="glass-card rounded-3xl p-6 text-center shadow-glass relative overflow-hidden">
+            <div class="absolute -top-12 -left-12 w-32 h-32 bg-brand-500/20 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="relative z-10 flex flex-col items-center">
+                <!-- Avatar / Foto de Perfil -->
+                <div class="relative mb-4">
+                    <div class="w-28 h-28 rounded-full border-2 border-brand-500/40 p-1 shadow-glow bg-slate-800 flex items-center justify-center overflow-hidden">
+                        <span class="text-3xl font-bold text-emerald-400">EC</span>
+                    </div>
+                    <span class="absolute bottom-1 right-1 flex h-4 w-4">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-4 w-4 bg-brand-500 border-2 border-slate-900"></span>
+                    </span>
+                </div>
+
+                <div class="flex items-center gap-1.5 justify-center">
+                    <h1 class="text-2xl font-bold tracking-tight text-white">Edwuar Cárdenas</h1>
+                    <i data-lucide="badge-check" class="w-5 h-5 text-brand-500 fill-brand-500/20"></i>
+                </div>
+                <p class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mt-0.5">Desarrollo Web & Inteligencia Comercial</p>
+                
+                <div class="inline-flex items-center gap-2 mt-3 px-3 py-1 rounded-full text-xs font-semibold bg-slate-800/80 text-slate-300 border border-slate-700/50">
+                    <i data-lucide="cpu" class="w-3.5 h-3.5 text-brand-500"></i>
+                    <span>ED NET PRO • Cúcuta</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACCIONES PRINCIPALES -->
+        <section class="space-y-3">
+            
+            <!-- Descargar VCF Directo -->
+            <button onclick="downloadVCF()" 
+                    class="w-full bg-gradient-to-r from-brand-600 to-emerald-500 hover:from-brand-500 hover:to-emerald-400 text-white font-semibold py-4 px-6 rounded-2xl shadow-glow flex items-center justify-between transition-all duration-200 group active:scale-[0.98]">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-white/10 rounded-xl">
+                        <i data-lucide="user-plus" class="w-6 h-6"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-base leading-tight font-bold">Guardar mi Contacto</span>
+                        <span class="block text-xs text-emerald-100/80 font-normal">Agregar a la agenda del teléfono</span>
+                    </div>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 opacity-70 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <!-- WhatsApp Directo -->
+            <a href="https://wa.me/573000000000?text=Hola%20Edwuar,%20escaneé%20tu%20tarjeta%20NFC%20y%20quiero%20información%20sobre%20tus%20servicios." 
+               target="_blank"
+               onclick="trackEvent('click_whatsapp', 'Contacto_Directo')"
+               class="w-full glass-button hover:bg-slate-800/80 text-white font-medium py-3.5 px-5 rounded-2xl flex items-center justify-between transition-all border border-emerald-500/30 group active:scale-[0.98]">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-emerald-500/10 text-emerald-400 rounded-xl">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-sm font-semibold">Hablar por WhatsApp Directo</span>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-emerald-400 transition-colors"></i>
+            </a>
+
+        </section>
+
+        <!-- CARRUSEL DE SERVICIOS (SWIPEABLE) -->
+        <section class="glass-card rounded-3xl p-5 space-y-3">
+            <div class="flex items-center justify-between px-1">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="layers" class="w-4 h-4 text-brand-500"></i>
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Soluciones Digitales</h2>
+                </div>
+                <span class="text-[11px] text-slate-400">Desliza →</span>
+            </div>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <!-- Tarjeta 1: NFC Pro -->
+                    <div class="swiper-slide">
+                        <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <span class="p-2 bg-emerald-500/10 text-emerald-400 rounded-xl">
+                                    <i data-lucide="nfc" class="w-6 h-6"></i>
+                                </span>
+                                <span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-500/30">
+                                    $250.000 COP
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Tarjetas NFC Inteligentes</h3>
+                                <p class="text-xs text-slate-400 mt-1">Tarjeta física personalizada + Landing Page Ultra Premium + VCF dinámico sin mensualidades.</p>
+                            </div>
+                            <button onclick="trackEvent('click_servicio', 'Tarjeta_NFC'); openWhatsApp('Información de Tarjetas NFC Pro');" 
+                                    class="w-full bg-slate-800 hover:bg-slate-700 text-emerald-400 font-semibold text-xs py-2.5 px-4 rounded-xl border border-slate-700 flex items-center justify-center gap-2 transition-all">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Solicitar Demostración</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2: Automatizaciones & IA -->
+                    <div class="swiper-slide">
+                        <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <span class="p-2 bg-blue-500/10 text-blue-400 rounded-xl">
+                                    <i data-lucide="bot" class="w-6 h-6"></i>
+                                </span>
+                                <span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-2.5 py-1 rounded-full border border-blue-500/30">
+                                    Fase 2 Pro
+                                </span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">Sistemas de Ventas & IA</h3>
+                                <p class="text-xs text-slate-400 mt-1">Agentes de WhatsApp automáticos, atención 24/7 y embudos de conversión para negocios.</p>
+                            </div>
+                            <button onclick="trackEvent('click_servicio', 'Sistema_Ventas'); openWhatsApp('Información de Automatización y Sistemas de Ventas');" 
+                                    class="w-full bg-slate-800 hover:bg-slate-700 text-blue-400 font-semibold text-xs py-2.5 px-4 rounded-xl border border-slate-700 flex items-center justify-center gap-2 transition-all">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Cotizar Sistema</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center py-2">
+            <p class="text-[11px] text-slate-500 flex items-center justify-center gap-1">
+                <span>edwuarcardenas.online</span>
+                <span class="inline-block w-1 h-1 rounded-full bg-slate-600"></span>
+                <span class="text-slate-400 font-medium">ED NET PRO</span>
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- Swiper JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        lucide.createIcons();
+
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1.05,
+            spaceBetween: 14,
+            grabCursor: true,
+            pagination: { el: ".swiper-pagination", clickable: true }
+        });
+
+        // Generador VCF de Edwuar Cárdenas
+        function downloadVCF() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:Cárdenas;Edwuar;;;
+FN:Edwuar Cárdenas
+ORG:ED NET PRO
+TITLE:Desarrollo Web & Inteligencia Comercial
+TEL;TYPE=CELL,VOICE:+573000000000
+EMAIL;TYPE=WORK:contacto@edwuarcardenas.online
+URL:https://www.edwuarcardenas.online
+ADR;TYPE=WORK:;;Cúcuta;Norte de Santander;;Colombia
+END:VCARD`;
+
+            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'Edwuar_Cardenas_Contacto.vcf';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            
+            trackEvent('download_vcf', 'Contacto_Guardado');
+        }
+
+        function trackEvent(eventName, eventLabel) {
+            console.log(`📊 [ANALYTICS]: ${eventName} -> ${eventLabel}`);
+        }
+
+        function openWhatsApp(servicio) {
+            const telefono = "57317 1282856"; // Reemplaza por tu número de WhatsApp
+            const mensaje = encodeURIComponent(`Hola Edwuar, vi tu tarjeta NFC y quiero consultar sobre: ${servicio}`);
+            window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+        }
+    </script>
+</body>
+</html>
