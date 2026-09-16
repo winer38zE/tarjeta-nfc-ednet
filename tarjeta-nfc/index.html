@@ -2,17 +2,14 @@
 <html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edwuar Cárdenas — Arquitecto de Soluciones Tecnológicas & Automatización Comercial. Ingeniería, IA y ventas de alto rendimiento. ED NET PRO · Cúcuta.">
+    <meta name="theme-color" content="#0F172A">
     <title>Edwuar Cárdenas | ED NET PRO</title>
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Swiper CSS (Carrusel Táctil) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <script>
         tailwind.config = {
@@ -20,246 +17,495 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            500: '#22c55e',
-                            600: '#16a34a',
-                        }
+                        carbon: '#0F172A',
+                        neon: '#10B981',
+                        gold: '#D4AF37'
                     },
                     boxShadow: {
-                        'glow': '0 0 25px -5px rgba(34, 197, 94, 0.4)',
-                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                        glow: '0 0 40px -8px rgba(16, 185, 129, 0.45)',
+                        gold: '0 0 28px -10px rgba(212, 175, 55, 0.55)'
                     }
                 }
             }
-        }
+        };
     </script>
 
     <style>
+        :root { --neon: #10B981; --carbon: #0F172A; --gold: #D4AF37; }
         body {
-            background-color: #090d16;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(34, 197, 94, 0.12) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--carbon);
+            background-image:
+                radial-gradient(at 8% 0%, rgba(16, 185, 129, 0.18) 0px, transparent 42%),
+                radial-gradient(at 92% 12%, rgba(6, 182, 212, 0.12) 0px, transparent 38%),
+                radial-gradient(at 50% 100%, rgba(212, 175, 55, 0.08) 0px, transparent 46%);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
-
-        .glass-card {
-            background: rgba(17, 24, 39, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+        .glass {
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        .glass-button {
-            background: rgba(31, 41, 55, 0.6);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .neon-ring {
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35), 0 0 28px rgba(16, 185, 129, 0.35);
+            animation: pulseRing 2.8s ease-in-out infinite;
         }
-
-        .swiper {
-            width: 100%;
-            padding-bottom: 35px !important;
+        @keyframes pulseRing {
+            0%, 100% { box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35), 0 0 18px rgba(16, 185, 129, 0.25); }
+            50% { box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.55), 0 0 36px rgba(16, 185, 129, 0.5); }
         }
-        .swiper-pagination-bullet { background: #475569 !important; }
-        .swiper-pagination-bullet-active {
-            background: #22c55e !important;
-            width: 18px;
-            border-radius: 4px;
-        }
+        .swiper { width: 100%; padding-bottom: 36px !important; }
+        .swiper-pagination-bullet { background: #475569 !important; opacity: 1 !important; }
+        .swiper-pagination-bullet-active { background: #10B981 !important; width: 20px; border-radius: 999px; }
+        .video-shell video::-webkit-media-controls { display: none !important; }
+        .stat-num { font-variant-numeric: tabular-nums; }
     </style>
 </head>
-<body class="text-slate-100 min-h-screen flex justify-center items-center p-4 antialiased">
+<body class="text-slate-100 min-h-screen antialiased">
+    <div class="mx-auto w-full max-w-md px-4 py-6 space-y-5">
 
-    <main class="w-full max-w-md space-y-5 my-auto">
-
-        <!-- HEADER DE PERFIL -->
-        <section class="glass-card rounded-3xl p-6 text-center shadow-glass relative overflow-hidden">
-            <div class="absolute -top-12 -left-12 w-32 h-32 bg-brand-500/20 rounded-full blur-2xl pointer-events-none"></div>
-
+        <header class="glass rounded-3xl p-6 text-center shadow-glow relative overflow-hidden">
+            <div class="absolute -top-16 -right-10 w-40 h-40 bg-neon/20 rounded-full blur-3xl pointer-events-none"></div>
             <div class="relative z-10 flex flex-col items-center">
-                <!-- Avatar / Foto de Perfil -->
                 <div class="relative mb-4">
-                    <div class="w-28 h-28 rounded-full border-2 border-brand-500/40 p-1 shadow-glow bg-slate-800 flex items-center justify-center overflow-hidden">
-                        <span class="text-3xl font-bold text-emerald-400">EC</span>
+                    <div class="neon-ring w-28 h-28 rounded-full p-[3px] bg-gradient-to-br from-neon via-cyan-400 to-gold">
+                        <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-hidden">
+                            <span class="text-3xl font-bold bg-gradient-to-br from-emerald-300 to-cyan-300 bg-clip-text text-transparent">EC</span>
+                        </div>
                     </div>
                     <span class="absolute bottom-1 right-1 flex h-4 w-4">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-4 w-4 bg-brand-500 border-2 border-slate-900"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-4 w-4 bg-neon border-2 border-carbon"></span>
                     </span>
                 </div>
-
-                <div class="flex items-center gap-1.5 justify-center">
-                    <h1 class="text-2xl font-bold tracking-tight text-white">Edwuar Cárdenas</h1>
-                    <i data-lucide="badge-check" class="w-5 h-5 text-brand-500 fill-brand-500/20"></i>
+                <div class="flex items-center justify-center gap-2">
+                    <h1 class="text-2xl font-bold tracking-tight">Edwuar Cárdenas</h1>
+                    <i class="fa-solid fa-circle-check text-neon"></i>
                 </div>
-                <p class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mt-0.5">Desarrollo Web & Inteligencia Comercial</p>
-                
-                <div class="inline-flex items-center gap-2 mt-3 px-3 py-1 rounded-full text-xs font-semibold bg-slate-800/80 text-slate-300 border border-slate-700/50">
-                    <i data-lucide="cpu" class="w-3.5 h-3.5 text-brand-500"></i>
+                <p class="mt-1 text-sm text-slate-300">Arquitecto de Soluciones Tecnológicas &amp; Automatización Comercial</p>
+                <div class="mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-slate-900/80 px-3 py-1 text-xs font-semibold text-emerald-300">
+                    <i class="fa-solid fa-shield-halved text-gold"></i>
                     <span>ED NET PRO • Cúcuta</span>
                 </div>
+                <p class="mt-4 text-sm leading-relaxed text-slate-400">
+                    Transformo empresas y profesionales integrando Ingeniería, Inteligencia Artificial y Estrategias de Ventas de Alto Rendimiento.
+                </p>
+            </div>
+        </header>
+
+        <section class="space-y-3">
+            <button type="button" onclick="downloadVCF()" class="w-full rounded-2xl bg-gradient-to-r from-emerald-600 to-cyan-500 py-4 px-5 font-semibold shadow-glow flex items-center justify-between active:scale-[0.98] transition">
+                <span class="flex items-center gap-3">
+                    <span class="grid h-10 w-10 place-items-center rounded-xl bg-white/15"><i class="fa-solid fa-address-card"></i></span>
+                    <span class="text-left">
+                        <span class="block leading-tight">Guardar en Agenda (.vcf)</span>
+                        <span class="block text-xs font-normal text-emerald-50/80">vCard 3.0 · contacto completo</span>
+                    </span>
+                </span>
+                <i class="fa-solid fa-chevron-right opacity-80"></i>
+            </button>
+            <a id="btnWhatsAppHero" href="#" class="w-full glass rounded-2xl py-3.5 px-5 flex items-center justify-between border border-emerald-500/30 active:scale-[0.98] transition">
+                <span class="flex items-center gap-3">
+                    <span class="grid h-10 w-10 place-items-center rounded-xl bg-emerald-500/15 text-neon"><i class="fa-brands fa-whatsapp text-xl"></i></span>
+                    <span class="text-sm font-semibold">Hablar por WhatsApp Directo</span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 text-sm"></i>
+            </a>
+        </section>
+
+        <section class="glass rounded-3xl p-4 space-y-3">
+            <div class="flex items-center justify-between px-1">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300"><i class="fa-solid fa-circle-play text-neon mr-2"></i>Presentación HD</h2>
+                <span class="text-[11px] text-gold">Video / YouTube / MP4</span>
+            </div>
+            <div class="video-shell relative overflow-hidden rounded-2xl border border-white/10 bg-black aspect-video">
+                <iframe id="ytFrame" class="hidden absolute inset-0 h-full w-full" title="Video de presentación" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                <video id="introVideo" class="h-full w-full object-cover" playsinline preload="metadata" poster="">
+                    <source src="presentacion.mp4" type="video/mp4">
+                </video>
+                <div id="videoOverlay" class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-black/80 via-black/40 to-black/20">
+                    <button type="button" onclick="toggleVideo()" class="h-16 w-16 rounded-full bg-neon/90 text-carbon shadow-glow grid place-items-center">
+                        <i class="fa-solid fa-play ml-1"></i>
+                    </button>
+                    <p class="mt-3 text-xs text-slate-300">Reproducir presentación</p>
+                </div>
+                <div id="videoControls" class="hidden absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/90 to-transparent">
+                    <div class="flex items-center gap-3 text-xs">
+                        <button type="button" onclick="toggleVideo()" class="h-8 w-8 rounded-full bg-white/10 grid place-items-center"><i id="playIcon" class="fa-solid fa-pause"></i></button>
+                        <input id="seekBar" type="range" min="0" max="100" value="0" class="flex-1 accent-emerald-400" oninput="seekVideo(this.value)">
+                        <span id="timeLabel" class="tabular-nums text-slate-300">0:00</span>
+                        <button type="button" onclick="toggleMute()" class="h-8 w-8 rounded-full bg-white/10 grid place-items-center"><i id="muteIcon" class="fa-solid fa-volume-high"></i></button>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- ACCIONES PRINCIPALES -->
         <section class="space-y-3">
-            
-            <!-- Descargar VCF Directo -->
-            <button onclick="downloadVCF()" 
-                    class="w-full bg-gradient-to-r from-brand-600 to-emerald-500 hover:from-brand-500 hover:to-emerald-400 text-white font-semibold py-4 px-6 rounded-2xl shadow-glow flex items-center justify-between transition-all duration-200 group active:scale-[0.98]">
-                <div class="flex items-center gap-3">
-                    <div class="p-2 bg-white/10 rounded-xl">
-                        <i data-lucide="user-plus" class="w-6 h-6"></i>
-                    </div>
-                    <div class="text-left">
-                        <span class="block text-base leading-tight font-bold">Guardar mi Contacto</span>
-                        <span class="block text-xs text-emerald-100/80 font-normal">Agregar a la agenda del teléfono</span>
-                    </div>
+            <h2 class="px-1 text-xs font-bold uppercase tracking-wider text-slate-400">Trayectoria híbrida</h2>
+            <article class="glass rounded-2xl p-4 flex gap-3">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-emerald-500/15 text-neon"><i class="fa-solid fa-chart-line"></i></span>
+                <div>
+                    <h3 class="font-semibold">8 Años en Ventas Consultivas</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Asesor comercial y estratega de ventas de alto rendimiento.</p>
                 </div>
-                <i data-lucide="chevron-right" class="w-5 h-5 opacity-70 group-hover:translate-x-1 transition-transform"></i>
-            </button>
-
-            <!-- WhatsApp Directo -->
-            <a href="https://wa.me/573000000000?text=Hola%20Edwuar,%20escaneé%20tu%20tarjeta%20NFC%20y%20quiero%20información%20sobre%20tus%20servicios." 
-               target="_blank"
-               onclick="trackEvent('click_whatsapp', 'Contacto_Directo')"
-               class="w-full glass-button hover:bg-slate-800/80 text-white font-medium py-3.5 px-5 rounded-2xl flex items-center justify-between transition-all border border-emerald-500/30 group active:scale-[0.98]">
-                <div class="flex items-center gap-3">
-                    <div class="p-2 bg-emerald-500/10 text-emerald-400 rounded-xl">
-                        <i data-lucide="message-square" class="w-5 h-5"></i>
-                    </div>
-                    <span class="text-sm font-semibold">Hablar por WhatsApp Directo</span>
+            </article>
+            <article class="glass rounded-2xl p-4 flex gap-3">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-cyan-500/15 text-cyan-300"><i class="fa-solid fa-oil-well"></i></span>
+                <div>
+                    <h3 class="font-semibold">Ingeniería de Petróleos</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Optimización de procesos y sistemas complejos.</p>
                 </div>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-emerald-400 transition-colors"></i>
-            </a>
-
+            </article>
+            <article class="glass rounded-2xl p-4 flex gap-3">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-amber-500/15 text-gold"><i class="fa-solid fa-microchip"></i></span>
+                <div>
+                    <h3 class="font-semibold">Arquitectura de IA &amp; Automatización</h3>
+                    <p class="text-xs text-slate-400 mt-0.5">Creador de ED NET PRO: IA, CRM, NFC y marketing digital.</p>
+                </div>
+            </article>
         </section>
 
-        <!-- CARRUSEL DE SERVICIOS (SWIPEABLE) -->
-        <section class="glass-card rounded-3xl p-5 space-y-3">
+        <section class="glass rounded-3xl p-5 space-y-3">
             <div class="flex items-center justify-between px-1">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="layers" class="w-4 h-4 text-brand-500"></i>
-                    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300">Soluciones Digitales</h2>
-                </div>
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300"><i class="fa-solid fa-layer-group text-neon mr-2"></i>Servicios</h2>
                 <span class="text-[11px] text-slate-400">Desliza →</span>
             </div>
-
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-
-                    <!-- Tarjeta 1: NFC Pro -->
                     <div class="swiper-slide">
-                        <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800 space-y-3">
+                        <div class="rounded-2xl border border-white/10 bg-slate-950/80 p-4 space-y-3">
                             <div class="flex justify-between items-start">
-                                <span class="p-2 bg-emerald-500/10 text-emerald-400 rounded-xl">
-                                    <i data-lucide="nfc" class="w-6 h-6"></i>
-                                </span>
-                                <span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-500/30">
-                                    $250.000 COP
-                                </span>
+                                <span class="grid h-10 w-10 place-items-center rounded-xl bg-emerald-500/15 text-neon"><i class="fa-solid fa-wifi"></i></span>
+                                <span class="rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2.5 py-1 text-xs font-bold text-emerald-300">$250.000 COP</span>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-white text-base">Tarjetas NFC Inteligentes</h3>
-                                <p class="text-xs text-slate-400 mt-1">Tarjeta física personalizada + Landing Page Ultra Premium + VCF dinámico sin mensualidades.</p>
-                            </div>
-                            <button onclick="trackEvent('click_servicio', 'Tarjeta_NFC'); openWhatsApp('Información de Tarjetas NFC Pro');" 
-                                    class="w-full bg-slate-800 hover:bg-slate-700 text-emerald-400 font-semibold text-xs py-2.5 px-4 rounded-xl border border-slate-700 flex items-center justify-center gap-2 transition-all">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                <span>Solicitar Demostración</span>
-                            </button>
+                            <h3 class="font-bold">Tarjetas NFC Inteligentes</h3>
+                            <p class="text-xs text-slate-400">Landing premium + analíticas + vCard dinámico. Identidad física que abre tu CRM digital.</p>
+                            <button type="button" onclick="openWhatsApp('Tarjetas NFC Inteligentes con Landing y Analíticas')" class="w-full rounded-xl border border-slate-700 bg-slate-800 py-2.5 text-xs font-semibold text-neon">Solicitar</button>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 2: Automatizaciones & IA -->
                     <div class="swiper-slide">
-                        <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800 space-y-3">
+                        <div class="rounded-2xl border border-white/10 bg-slate-950/80 p-4 space-y-3">
                             <div class="flex justify-between items-start">
-                                <span class="p-2 bg-blue-500/10 text-blue-400 rounded-xl">
-                                    <i data-lucide="bot" class="w-6 h-6"></i>
-                                </span>
-                                <span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-2.5 py-1 rounded-full border border-blue-500/30">
-                                    Fase 2 Pro
-                                </span>
+                                <span class="grid h-10 w-10 place-items-center rounded-xl bg-cyan-500/15 text-cyan-300"><i class="fa-solid fa-gears"></i></span>
+                                <span class="rounded-full border border-cyan-500/30 bg-cyan-500/15 px-2.5 py-1 text-xs font-bold text-cyan-300">n8n + PocketBase</span>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-white text-base">Sistemas de Ventas & IA</h3>
-                                <p class="text-xs text-slate-400 mt-1">Agentes de WhatsApp automáticos, atención 24/7 y embudos de conversión para negocios.</p>
-                            </div>
-                            <button onclick="trackEvent('click_servicio', 'Sistema_Ventas'); openWhatsApp('Información de Automatización y Sistemas de Ventas');" 
-                                    class="w-full bg-slate-800 hover:bg-slate-700 text-blue-400 font-semibold text-xs py-2.5 px-4 rounded-xl border border-slate-700 flex items-center justify-center gap-2 transition-all">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                <span>Cotizar Sistema</span>
-                            </button>
+                            <h3 class="font-bold">Automatización de Ventas</h3>
+                            <p class="text-xs text-slate-400">Flujos n8n y CRM PocketBase: leads, follow-up y pipeline sin fricción.</p>
+                            <button type="button" onclick="openWhatsApp('Automatización de Ventas con n8n y PocketBase')" class="w-full rounded-xl border border-slate-700 bg-slate-800 py-2.5 text-xs font-semibold text-cyan-300">Cotizar</button>
                         </div>
                     </div>
-
+                    <div class="swiper-slide">
+                        <div class="rounded-2xl border border-white/10 bg-slate-950/80 p-4 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <span class="grid h-10 w-10 place-items-center rounded-xl bg-violet-500/15 text-violet-300"><i class="fa-solid fa-headset"></i></span>
+                                <span class="rounded-full border border-violet-500/30 bg-violet-500/15 px-2.5 py-1 text-xs font-bold text-violet-300">Wapi / Evolution</span>
+                            </div>
+                            <h3 class="font-bold">Agentes de Voz &amp; WhatsApp Bot</h3>
+                            <p class="text-xs text-slate-400">IA conversacional 24/7 con voz y bots sobre Wapi o Evolution API.</p>
+                            <button type="button" onclick="openWhatsApp('Agentes de Voz con IA y WhatsApp Bot')" class="w-full rounded-xl border border-slate-700 bg-slate-800 py-2.5 text-xs font-semibold text-violet-300">Demo</button>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rounded-2xl border border-white/10 bg-slate-950/80 p-4 space-y-3">
+                            <div class="flex justify-between items-start">
+                                <span class="grid h-10 w-10 place-items-center rounded-xl bg-amber-500/15 text-gold"><i class="fa-solid fa-bullseye"></i></span>
+                                <span class="rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-xs font-bold text-gold">CAPI / Ads</span>
+                            </div>
+                            <h3 class="font-bold">Tráfico Pago &amp; Píxeles</h3>
+                            <p class="text-xs text-slate-400">Facebook CAPI, Google Ads y medición server-side para campañas que cierran.</p>
+                            <button type="button" onclick="openWhatsApp('Campañas de tráfico pago y píxeles CAPI / Google Ads')" class="w-full rounded-xl border border-slate-700 bg-slate-800 py-2.5 text-xs font-semibold text-gold">Estrategia</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
         </section>
 
-        <!-- FOOTER -->
-        <footer class="text-center py-2">
-            <p class="text-[11px] text-slate-500 flex items-center justify-center gap-1">
-                <span>edwuarcardenas.online</span>
-                <span class="inline-block w-1 h-1 rounded-full bg-slate-600"></span>
-                <span class="text-slate-400 font-medium">ED NET PRO</span>
+        <section class="space-y-3">
+            <h2 class="px-1 text-xs font-bold uppercase tracking-wider text-slate-400">Canales de contacto</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <a id="btnWhatsAppGrid" href="#" class="glass rounded-2xl p-4 flex flex-col gap-2 active:scale-[0.98] transition">
+                    <i class="fa-brands fa-whatsapp text-2xl text-neon"></i>
+                    <span class="text-sm font-semibold">WhatsApp</span>
+                    <span class="text-[11px] text-slate-400">+57 317 1282856</span>
+                </a>
+                <a href="https://instagram.com/" target="_blank" rel="noopener" onclick="trackEvent('click_social', 'instagram')" class="glass rounded-2xl p-4 flex flex-col gap-2">
+                    <i class="fa-brands fa-instagram text-2xl text-pink-400"></i>
+                    <span class="text-sm font-semibold">Instagram</span>
+                    <span class="text-[11px] text-slate-400">@edwuarcardenas</span>
+                </a>
+                <a href="https://facebook.com/" target="_blank" rel="noopener" onclick="trackEvent('click_social', 'facebook')" class="glass rounded-2xl p-4 flex flex-col gap-2">
+                    <i class="fa-brands fa-facebook text-2xl text-blue-400"></i>
+                    <span class="text-sm font-semibold">Facebook</span>
+                    <span class="text-[11px] text-slate-400">ED NET PRO</span>
+                </a>
+                <a href="https://tiktok.com/" target="_blank" rel="noopener" onclick="trackEvent('click_social', 'tiktok')" class="glass rounded-2xl p-4 flex flex-col gap-2">
+                    <i class="fa-brands fa-tiktok text-2xl"></i>
+                    <span class="text-sm font-semibold">TikTok</span>
+                    <span class="text-[11px] text-slate-400">Contenido &amp; demos</span>
+                </a>
+                <a href="https://youtube.com/" target="_blank" rel="noopener" onclick="trackEvent('click_social', 'youtube')" class="glass rounded-2xl p-4 flex flex-col gap-2 col-span-2">
+                    <i class="fa-brands fa-youtube text-2xl text-red-400"></i>
+                    <span class="text-sm font-semibold">YouTube</span>
+                    <span class="text-[11px] text-slate-400">Tutoriales y casos de automatización</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="glass rounded-3xl p-5 space-y-3">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300"><i class="fa-solid fa-location-dot text-neon mr-2"></i>Ubicación</h2>
+            <p class="text-sm text-slate-300">Cúcuta, Norte de Santander, Colombia</p>
+            <p class="text-xs text-slate-400">Atención presencial y remota global.</p>
+            <div class="overflow-hidden rounded-2xl border border-white/10 h-48">
+                <iframe title="Mapa de Cúcuta" class="h-full w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=C%C3%BAcuta,+Norte+de+Santander,+Colombia&hl=es&z=13&output=embed"></iframe>
+            </div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=C%C3%BAcuta,+Norte+de+Santander,+Colombia" target="_blank" rel="noopener"
+               onclick="trackEvent('click_maps', 'como_llegar')"
+               class="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-800 py-3 text-sm font-semibold border border-gold/30 text-gold shadow-gold">
+                <i class="fa-solid fa-route"></i> Cómo llegar / Abrir en Maps
+            </a>
+        </section>
+
+        <footer class="glass rounded-3xl p-5 space-y-4">
+            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-300"><i class="fa-solid fa-chart-simple text-neon mr-2"></i>Analíticas en tiempo real</h2>
+            <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="rounded-2xl bg-slate-950/70 border border-white/5 p-3">
+                    <p id="statVisits" class="stat-num text-xl font-bold text-neon">0</p>
+                    <p class="text-[10px] uppercase tracking-wide text-slate-400 mt-1">Visitas</p>
+                </div>
+                <div class="rounded-2xl bg-slate-950/70 border border-white/5 p-3">
+                    <p id="statVcf" class="stat-num text-xl font-bold text-gold">0</p>
+                    <p class="text-[10px] uppercase tracking-wide text-slate-400 mt-1">Clics VCF</p>
+                </div>
+                <div class="rounded-2xl bg-slate-950/70 border border-white/5 p-3">
+                    <p id="statWa" class="stat-num text-xl font-bold text-cyan-300">0</p>
+                    <p class="text-[10px] uppercase tracking-wide text-slate-400 mt-1">WhatsApp</p>
+                </div>
+            </div>
+            <p class="text-center text-[11px] text-slate-500">
+                edwuarcardenas.online · ED NET PRO · Cúcuta
             </p>
         </footer>
+    </div>
 
-    </main>
-
-    <!-- Swiper JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script>
-        lucide.createIcons();
+        const CONFIG = {
+            phoneE164: '573171282856',
+            phoneDisplay: '+57 317 1282856',
+            email: 'contacto@edwuarcardenas.online',
+            site: 'https://edwuarcardenas.online',
+            pocketbaseUrl: 'https://edwuarcardenas.online/api/collections/nfc_analytics/records',
+            metaPixelId: 'TU_PIXEL_ID',
+            ga4Id: 'G-XXXXXXXXXX',
+            youtubeId: ''
+        };
 
-        const swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1.05,
+        const WA_URL = `https://wa.me/${CONFIG.phoneE164}?text=${encodeURIComponent('Hola Edwuar, escaneé tu tarjeta NFC y quiero información sobre tus servicios.')}`;
+
+        new Swiper('.mySwiper', {
+            slidesPerView: 1.08,
             spaceBetween: 14,
             grabCursor: true,
-            pagination: { el: ".swiper-pagination", clickable: true }
+            pagination: { el: '.swiper-pagination', clickable: true }
         });
 
-        // Generador VCF de Edwuar Cárdenas
+        function devicePayload() {
+            return {
+                userAgent: navigator.userAgent,
+                language: navigator.language,
+                platform: navigator.platform,
+                screen: `${screen.width}x${screen.height}`,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                referrer: document.referrer || 'direct',
+                path: location.pathname + location.search
+            };
+        }
+
+        function bumpLocal(key) {
+            const n = Number(localStorage.getItem(key) || 0) + 1;
+            localStorage.setItem(key, String(n));
+            return n;
+        }
+
+        function seedSimulated(key, min, max) {
+            if (!localStorage.getItem(key)) {
+                localStorage.setItem(key, String(Math.floor(Math.random() * (max - min + 1)) + min));
+            }
+        }
+
+        function renderStats() {
+            document.getElementById('statVisits').textContent = localStorage.getItem('nfc_visits') || '0';
+            document.getElementById('statVcf').textContent = localStorage.getItem('nfc_vcf') || '0';
+            document.getElementById('statWa').textContent = localStorage.getItem('nfc_wa') || '0';
+        }
+
+        async function sendAnalyticsToPocketBase(eventType, payload) {
+            const body = {
+                eventType,
+                occurredAt: new Date().toISOString(),
+                device: devicePayload(),
+                ...payload
+            };
+            try {
+                await fetch(CONFIG.pocketbaseUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+            } catch (err) {
+                console.warn('[PocketBase]', err);
+            }
+        }
+
+        function fbqSafe() {
+            return typeof window.fbq === 'function' ? window.fbq : function () {};
+        }
+
+        function gtagSafe() {
+            return typeof window.gtag === 'function' ? window.gtag : function () {};
+        }
+
+        function trackEvent(eventName, label) {
+            console.log('[ANALYTICS]', eventName, label);
+            gtagSafe()('event', eventName, { event_label: label, event_category: 'nfc_landing' });
+            sendAnalyticsToPocketBase(eventName, { label });
+        }
+
         function downloadVCF() {
-            const vcard = `BEGIN:VCARD
-VERSION:3.0
-N:Cárdenas;Edwuar;;;
-FN:Edwuar Cárdenas
-ORG:ED NET PRO
-TITLE:Desarrollo Web & Inteligencia Comercial
-TEL;TYPE=CELL,VOICE:+573000000000
-EMAIL;TYPE=WORK:contacto@edwuarcardenas.online
-URL:https://www.edwuarcardenas.online
-ADR;TYPE=WORK:;;Cúcuta;Norte de Santander;;Colombia
-END:VCARD`;
+            const vcard = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                'N:Cárdenas;Edwuar;;;',
+                'FN:Edwuar Cárdenas',
+                'ORG:ED NET PRO',
+                'TITLE:Arquitecto de Soluciones Tecnológicas',
+                `TEL;TYPE=CELL,VOICE:+${CONFIG.phoneE164}`,
+                `EMAIL;TYPE=WORK:${CONFIG.email}`,
+                `URL:${CONFIG.site}`,
+                'ADR;TYPE=WORK:;;Cúcuta;Norte de Santander;;Colombia',
+                'NOTE:Transformo empresas y profesionales integrando Ingeniería, IA y Ventas de Alto Rendimiento.',
+                'END:VCARD'
+            ].join('\r\n');
 
             const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-            const url = window.URL.createObjectURL(blob);
+            const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
-            a.style.display = 'none';
             a.href = url;
-            a.download = 'Edwuar_Cardenas_Contacto.vcf';
+            a.download = 'Edwuar_Cardenas_ED_NET_PRO.vcf';
             document.body.appendChild(a);
             a.click();
-            window.URL.revokeObjectURL(url);
-            
+            a.remove();
+            URL.revokeObjectURL(url);
+
+            bumpLocal('nfc_vcf');
+            renderStats();
+            fbqSafe()('track', 'Contact');
             trackEvent('download_vcf', 'Contacto_Guardado');
         }
 
-        function trackEvent(eventName, eventLabel) {
-            console.log(`📊 [ANALYTICS]: ${eventName} -> ${eventLabel}`);
+        function openWhatsApp(servicio) {
+            const msg = encodeURIComponent(`Hola Edwuar, vi tu tarjeta NFC y quiero consultar sobre: ${servicio}`);
+            handleWhatsAppLead(`https://wa.me/${CONFIG.phoneE164}?text=${msg}`, servicio);
         }
 
-        function openWhatsApp(servicio) {
-            const telefono = "57317 1282856"; // Reemplaza por tu número de WhatsApp
-            const mensaje = encodeURIComponent(`Hola Edwuar, vi tu tarjeta NFC y quiero consultar sobre: ${servicio}`);
-            window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+        function handleWhatsAppLead(url, label) {
+            bumpLocal('nfc_wa');
+            renderStats();
+            fbqSafe()('track', 'Lead');
+            trackEvent('click_whatsapp', label || 'Contacto_Directo');
+            window.open(url, '_blank', 'noopener');
         }
+
+        const video = document.getElementById('introVideo');
+        const overlay = document.getElementById('videoOverlay');
+        const controls = document.getElementById('videoControls');
+        const ytFrame = document.getElementById('ytFrame');
+
+        function toggleVideo() {
+            if (CONFIG.youtubeId) {
+                ytFrame.classList.remove('hidden');
+                video.classList.add('hidden');
+                overlay.classList.add('hidden');
+                ytFrame.src = `https://www.youtube.com/embed/${CONFIG.youtubeId}?autoplay=1&rel=0`;
+                trackEvent('play_video', 'youtube');
+                return;
+            }
+            if (video.paused) {
+                video.play().catch(() => {});
+                overlay.classList.add('hidden');
+                controls.classList.remove('hidden');
+                document.getElementById('playIcon').className = 'fa-solid fa-pause';
+                trackEvent('play_video', 'mp4');
+            } else {
+                video.pause();
+                document.getElementById('playIcon').className = 'fa-solid fa-play';
+            }
+        }
+
+        function seekVideo(val) {
+            if (!video.duration) return;
+            video.currentTime = (Number(val) / 100) * video.duration;
+        }
+
+        function toggleMute() {
+            video.muted = !video.muted;
+            document.getElementById('muteIcon').className = video.muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high';
+        }
+
+        function fmt(t) {
+            const m = Math.floor(t / 60);
+            const s = Math.floor(t % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        video.addEventListener('timeupdate', () => {
+            if (!video.duration) return;
+            document.getElementById('seekBar').value = String((video.currentTime / video.duration) * 100);
+            document.getElementById('timeLabel').textContent = fmt(video.currentTime);
+        });
+        video.addEventListener('ended', () => {
+            overlay.classList.remove('hidden');
+            controls.classList.add('hidden');
+        });
+
+        (function bootTracking() {
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+                if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+                t = b.createElement(e); t.async = !0; t.src = v;
+                s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+            }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', CONFIG.metaPixelId);
+            fbq('track', 'PageView');
+
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function () { dataLayer.push(arguments); };
+            gtag('js', new Date());
+            gtag('config', CONFIG.ga4Id);
+            const ga = document.createElement('script');
+            ga.async = true;
+            ga.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.ga4Id}`;
+            document.head.appendChild(ga);
+        })();
+
+        seedSimulated('nfc_visits', 128, 186);
+        seedSimulated('nfc_vcf', 24, 48);
+        seedSimulated('nfc_wa', 41, 77);
+        bumpLocal('nfc_visits');
+        renderStats();
+        sendAnalyticsToPocketBase('page_view', { label: 'PageView' });
+
+        document.getElementById('btnWhatsAppHero').addEventListener('click', (e) => {
+            e.preventDefault();
+            handleWhatsAppLead(WA_URL, 'hero');
+        });
+        document.getElementById('btnWhatsAppGrid').addEventListener('click', (e) => {
+            e.preventDefault();
+            handleWhatsAppLead(WA_URL, 'grid');
+        });
     </script>
 </body>
 </html>
