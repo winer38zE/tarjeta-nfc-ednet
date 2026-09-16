@@ -1,0 +1,8 @@
+.web/
+.states/
+__pycache__/
+*.pyc
+.env
+uploaded_files/
+.reflex/
+node_modules/
